@@ -33,7 +33,7 @@ This lab demonstrates how to use **Ansible roles** to automate the installation 
 ```
 ├── README.md
 ├── inventory
-├── site.yml
+├── playbook.yml
 └── roles/
 ├── docker/
 │ └── tasks/main.yml
@@ -198,7 +198,7 @@ ansible-galaxy init roles/jenkins
 ```
 ## ✅ 5. Run the Playbook
 ```
-ansible-playbook -i inventory site.yml
+ansible-playbook -i inventory playbook.yml
 ```
 ![image](https://github.com/user-attachments/assets/9afb9bf3-7c0c-46c1-ad17-ad6ece2cfb85)
 
