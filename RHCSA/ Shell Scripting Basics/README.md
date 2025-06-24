@@ -92,7 +92,13 @@ bash ~/mysql_backup.sh
 ```
 ![image](https://github.com/user-attachments/assets/a5b92f5f-1d2c-4248-947a-373c9a6d6bc2)
 
+---
 
+# 👨‍💻 Author  
+Mahmoud Yassen  
+🎓 DevOps Trainee at iVolve
+
+🔗 [(www.linkedin.com/in/myassenn01)]
 
 
 
