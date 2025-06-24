@@ -1,0 +1,8 @@
+---
+- name: Deploy DevOps Tools
+  hosts: all
+  become: true
+  roles:
+    - docker
+    - kubectl
+    - jenkins
