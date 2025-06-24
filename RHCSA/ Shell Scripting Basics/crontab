@@ -1,0 +1,1 @@
+0 17 * * * /bin/bash /home/yassen/mysql_backup.sh
