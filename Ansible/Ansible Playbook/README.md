@@ -60,9 +60,14 @@ This lab demonstrates how to write and run an Ansible Playbook to configure a we
 ```
 ansible-playbook -i inventory webserver.yml
 ```
+![image](https://github.com/user-attachments/assets/7e465e29-823d-48a1-96e3-481ba1aeef74)
 
 
 ### 4. ✅ Verify the Web Server
+
+![image](https://github.com/user-attachments/assets/a68a55b6-eaab-4a55-81ec-462ec971ac91)
+
+![image](https://github.com/user-attachments/assets/5bb10363-adc7-48b1-ab15-1431230527d3)
 
 
 
