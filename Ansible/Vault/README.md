@@ -17,7 +17,7 @@ Automate the following tasks using Ansible and Ansible Vault:
 ```
 Vault
 ├── inventory # Ansible inventory file
-├── mysql_setup.yml # Main Ansible playbook
+├── vault_playpook.yml # Main Ansible playbook
 ├── vault_vars.yml # Encrypted vault file (contains DB credentials)
 ```
 
