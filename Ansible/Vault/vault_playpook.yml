@@ -1,0 +1,50 @@
+---
+- name: Lab 7 - Install MySQL and Setup iVolve DB
+  hosts: all
+  become: yes
+  vars_files:
+    - vault_vars.yml
+
+  tasks:
+    - name: Install MySQL server
+      dnf:
+        name: mysql-server
+        state: present
+
+    - name: Start and enable MySQL service
+      systemd:
+        name: mysqld
+        state: started
+        enabled: yes
+
+    - name: Ensure MySQL Python module is installed
+      dnf:
+        name: python3-PyMySQL
+        state: present
+
+    - name: Create my database
+      community.mysql.mysql_db:
+        name: iVolve
+        state: present
+        login_user: root
+        login_password: ""
+
+    - name: Create MySQL user with privileges
+      community.mysql.mysql_user:
+        name: "{{ db_user }}"
+        password: "{{ db_password }}"
+        priv: "iVolve.*:ALL"
+        host: "%"
+        state: present
+        login_user: root
+        login_password: ""
+
+    - name: Validate DB by listing databases using the created user
+      shell: |
+        mysql -u{{ db_user }} -p{{ db_password }} -e "SHOW DATABASES;"
+      register: db_output
+      changed_when: false
+
+    - name: Show DB list
+      debug:
+        msg: "{{ db_output.stdout_lines }}"
