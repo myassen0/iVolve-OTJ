@@ -103,6 +103,8 @@ ansible-playbook -i inventory mysql_setup.yml --ask-vault-pass
 ```
 `--ask-vault-pass`: Prompts you to enter the vault password to decrypt sensitive variables.
 
+![image](https://github.com/user-attachments/assets/b2f753b4-0dd4-411a-a566-e62876bc36da)
+
 
 
 
