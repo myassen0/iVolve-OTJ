@@ -35,7 +35,7 @@ Example content inside (will be encrypted):
 db_user: <db_user>
 db_password: <db_password>
 ```
-🔒 You will be prompted to enter a vault password. Save it securely.
+#### 🔒 You will be prompted to enter a vault password. Save it securely.
 ---
 ## 📜 Step 2: Create Playbook
 ```
@@ -105,7 +105,25 @@ ansible-playbook -i inventory mysql_setup.yml --ask-vault-pass
 
 ![image](https://github.com/user-attachments/assets/b2f753b4-0dd4-411a-a566-e62876bc36da)
 
+## 🧪 Step 4: Validation
+1- Connect to MySQL using the created user `mysql -u <user> -p `
+2- Run `SHOW DATABASES;` to ensure the `iVolve` DB exists.
 
+![image](https://github.com/user-attachments/assets/3cdfa990-e145-43d0-9c96-220b1c44ee8b)
 
+---
+# 📌 Notes
+- The playbook assumes default root access to MySQL with no password. If your system uses a password or socket authentication, adjust accordingly.
+- For repeated execution, the playbook is idempotent (won't recreate users or DB if they already exist).
+- You can edit vault variables securely using:
+```
+ansible-vault edit vault_vars.yml
+```
+---
+# 👨‍💻 Author  
+Mahmoud Yassen  
+🎓 DevOps Trainee at iVolve
+
+🔗 [(www.linkedin.com/in/myassenn01)]
 
 
