@@ -34,18 +34,16 @@ mvn clean package -DskipTests
 
 Create a file named `Dockerfile`:
 ```
-# Use a lightweight Jre image
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:17-jdk-alpine
 
 WORKDIR /app
 
-# Copy the pre-built JAR
 COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
 
 EXPOSE 8080
 
-# Run the app
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "app.jar"]
+
 ```
 ## 🏗️ Step 4: Build the Docker Image
 ```
@@ -62,8 +60,7 @@ curl http://localhost:8081
 ![image](https://github.com/user-attachments/assets/ec7321e8-4dcf-4205-bf6b-6d640d8ec9f8)
 
 ## 📦 Image Info
-- Base image: `eclipse-temurin:17-jre-alpine`
-- Build tool: `Maven (run locally, not inside Docker)`
+-  image: `eclipse-temurin:17-jdk-alpine`
 - Final JAR: `target/demo-0.0.1-SNAPSHOT.jar`
 - Exposed port: `8081`
 - size: `200MB`
