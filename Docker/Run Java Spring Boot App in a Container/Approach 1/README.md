@@ -24,24 +24,21 @@ cd Docker-1
 
 ---
 
-## 🐳 Step 2: Create Dockerfile (Multi-Stage)
+## 🐳 Step 2: Create Dockerfile 
 Create a file named `Dockerfile` :
 ```
-# Stage 1: Build the application using Maven and Java 17
-FROM maven:3.9.6-eclipse-temurin-17 AS builder
+FROM maven:3.9.6-eclipse-temurin-17
 
 WORKDIR /app
+
 COPY . .
+
 RUN mvn clean package -DskipTests
 
-# Stage 2: Run the application in a lightweight JDK environment
-FROM eclipse-temurin:17-jdk-alpine
-
-WORKDIR /app
-COPY --from=builder /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
-
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+CMD ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
+
 ```
 
 ## 🏗️ Step 3: Build the Docker Image
@@ -58,11 +55,15 @@ curl http://localhost:8080
 ```
 ![image](https://github.com/user-attachments/assets/598b1118-e78b-4605-816d-e1947f735ad6)
 
+## 🧹 Stop and Delete the Container
+```
+docker stop springboot-container1
+docker rm springboot-container1
+```
 
 ## 📦 Image Info
 
-- Base image (build stage): `maven:3.9.6-eclipse-temurin-17`
-- Base image (runtime stage): `eclipse-temurin:17-jdk-alpine`
+- Base image : `maven:3.9.6-eclipse-temurin-17`
 - Exposed port: `8080`
 - Final JAR: `target/demo-0.0.1-SNAPSHOT.jar`
 - Size: `352MB`
