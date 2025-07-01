@@ -87,10 +87,6 @@ docker volume rm nginx_logs
 ```
 🗑️ This removes the Nginx container and deletes the logs volume.
 
-### 📝 Notes
-- 📡 Bind Mounts reflect changes instantly from the host.
-- 💾 Volumes are ideal for long-term persistent data like logs.
-- 🧪 Always verify using curl or a web browser.
 
 ---
 # 👨‍💻 Author  
