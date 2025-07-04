@@ -53,7 +53,7 @@ cd docker6
 ```
 ### 2. Run Docker Compose
 ```
-docker-compose up --build
+docker compose up --build
 ```
 ### 3. Access the App
 Open your browser and go to:
