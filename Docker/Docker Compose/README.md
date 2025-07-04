@@ -55,9 +55,14 @@ cd docker6
 ```
 docker compose up --build
 ```
+![image](https://github.com/user-attachments/assets/eaf62d9b-f321-4b8b-823a-73778f48abcf)
+
+
 ### 3. Access the App
 Open your browser and go to:
 👉`http://localhost:3000`
+
+![image](https://github.com/user-attachments/assets/4a804ef6-61c5-40c4-8401-43df15ff5c59)
 
 ---
 ## 📦 Volumes & Networks
