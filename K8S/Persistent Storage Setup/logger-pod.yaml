@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: logger
+spec:
+  nodeName: worker2  # تأكيد إن البود يروح لنفس النود
+  containers:
+  - name: busybox
+    image: busybox:1.36.1
+    command: ["sh", "-c", "while true; do date >> /logs/log.txt; sleep 5; done"]
+    volumeMounts:
+    - mountPath: /logs
+      name: log-volume
+  volumes:
+  - name: log-volume
+    persistentVolumeClaim:
+      claimName: app-logs-pvc
