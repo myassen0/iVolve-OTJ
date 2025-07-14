@@ -121,18 +121,23 @@ curl http://localhost:3000/ready
 ```
 cat ./logs/access.log
 ```
+<img width="851" height="453" alt="image" src="https://github.com/user-attachments/assets/5c7ff0a9-ef8b-489c-8388-d508a114def7" />
 
 ## ☁️ Step 6: Push Image to Docker Hub
 1. 1. Tag your app image:
 ```
 docker tag kubernets-app yourdockerhubusername/kubernets-app:latest
 ```
+
 2. 2. Login & Push:
 ```
 docker login
 docker push yourdockerhubusername/kubernets-app:latest
 ```
+<img width="852" height="247" alt="image" src="https://github.com/user-attachments/assets/8bc638eb-8fd8-4243-bd00-6238f1e4a3e3" />
 
+DockerHub link:
+[https://hub.docker.com/repository/docker/yassenn01/kubernets-app/general]
 ---
 
 # iVolve-OTJ
