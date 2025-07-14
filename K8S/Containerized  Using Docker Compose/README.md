@@ -98,6 +98,8 @@ This will:
 - Create a volume db_data for MySQL persistence
 - Expose the app on port 3000
 
+<img width="851" height="127" alt="image" src="https://github.com/user-attachments/assets/15eb152a-4856-4dce-b719-20c6e8f6423d" />
+
 ## ✅ Step 5: Verify Application Health
 After running:
 1. Open browser or use curl to verify:
@@ -105,6 +107,16 @@ After running:
 curl http://localhost:3000/health
 curl http://localhost:3000/ready
 ```
+<img width="1917" height="962" alt="image" src="https://github.com/user-attachments/assets/4e4e1423-5bc7-4f5e-a488-7ab16d09b67e" />
+
+## Health
+
+<img width="605" height="187" alt="image" src="https://github.com/user-attachments/assets/3cad2585-b3ef-446f-a6d6-fd5feaa974a3" />
+
+### Ready:
+
+<img width="567" height="232" alt="image" src="https://github.com/user-attachments/assets/ff4c4b45-e70d-4bda-9ae8-fb6820753628" />
+
 2. Check access logs:
 ```
 cat ./logs/access.log
